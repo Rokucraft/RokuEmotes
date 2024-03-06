@@ -14,6 +14,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
     compileOnly("com.elmakers.mine.bukkit:EffectLib:10.2")
+    compileOnly("org.spongepowered:configurate-yaml:4.1.2")
     implementation("org.jspecify:jspecify:0.3.0")
 }
 
