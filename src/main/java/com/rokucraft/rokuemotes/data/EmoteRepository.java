@@ -1,11 +1,13 @@
 package com.rokucraft.rokuemotes.data;
 
 import com.rokucraft.rokuemotes.config.ConfigHelper;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 import javax.inject.Inject;
 import java.util.List;
-import java.util.Optional;
 
+@NullMarked
 public class EmoteRepository {
     private final ConfigHelper configHelper;
 
@@ -14,8 +16,8 @@ public class EmoteRepository {
         this.configHelper = configHelper;
     }
 
-    private Optional<Emote> getById(String id) {
-        return Optional.ofNullable(configHelper.getConfig().emotes().get(id));
+    private @Nullable Emote getById(String id) {
+        return configHelper.getConfig().emotes().get(id);
     }
 
     private List<Emote> getAll() {
