@@ -1,5 +1,6 @@
 package com.rokucraft.rokuemotes;
 
+import com.rokucraft.rokuemotes.data.Emote;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.Bukkit;

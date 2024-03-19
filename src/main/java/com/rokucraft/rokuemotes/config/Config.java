@@ -1,6 +1,6 @@
 package com.rokucraft.rokuemotes.config;
 
-import com.rokucraft.rokuemotes.Emote;
+import com.rokucraft.rokuemotes.data.Emote;
 import org.spongepowered.configurate.objectmapping.ConfigSerializable;
 
 import java.util.HashMap;

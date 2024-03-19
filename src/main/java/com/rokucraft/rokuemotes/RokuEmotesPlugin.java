@@ -1,13 +1,14 @@
 package com.rokucraft.rokuemotes;
 
-import com.rokucraft.rokuemotes.config.Config;
-import com.rokucraft.rokuemotes.config.ConfigHelper;
+import com.rokucraft.rokuemotes.di.DaggerRokuEmotesComponent;
+import com.rokucraft.rokuemotes.di.RokuEmotesComponent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class RokuEmotesPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
-        Config config = new ConfigHelper(this).load();
-        EmoteRepository repository = new EmoteRepository(config.emotes());
+        RokuEmotesComponent component = DaggerRokuEmotesComponent.builder()
+                .plugin(this)
+                .build();
     }
 }

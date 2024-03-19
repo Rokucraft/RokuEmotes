@@ -16,6 +16,9 @@ dependencies {
     compileOnly("com.elmakers.mine.bukkit:EffectLib:10.2")
     compileOnly("org.spongepowered:configurate-yaml:4.1.2")
     implementation("org.jspecify:jspecify:0.3.0")
+
+    implementation("com.google.dagger:dagger:2.51")
+    annotationProcessor("com.google.dagger:dagger-compiler:2.51")
 }
 
 java {

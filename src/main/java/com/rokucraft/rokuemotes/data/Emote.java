@@ -1,4 +1,4 @@
-package com.rokucraft.rokuemotes;
+package com.rokucraft.rokuemotes.data;
 
 import net.kyori.adventure.sound.Sound;
 import net.kyori.adventure.text.Component;
