@@ -8,10 +8,16 @@ import org.bukkit.entity.Player;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
+import javax.inject.Inject;
+
 import static net.kyori.adventure.text.minimessage.MiniMessage.miniMessage;
 
 @NullMarked
 public class EmoteExecutor {
+
+    @Inject
+    public EmoteExecutor() {
+    }
 
     public void perform(Emote emote, Player self, @Nullable Player other) {
         boolean isSelf = other == null;

@@ -16,11 +16,11 @@ public class EmoteRepository {
         this.configHelper = configHelper;
     }
 
-    private @Nullable Emote getById(String id) {
+    public @Nullable Emote getById(String id) {
         return configHelper.getConfig().emotes().get(id);
     }
 
-    private List<Emote> getAll() {
+    public List<Emote> getAll() {
         return configHelper.getConfig().emotes().values().stream().toList();
     }
 }

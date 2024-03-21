@@ -13,4 +13,7 @@ public record Emote(
         String otherTemplate,
         Sound sound
 ) {
+        public String permission() {
+                return "emote." + key;
+        }
 }

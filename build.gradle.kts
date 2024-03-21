@@ -15,6 +15,9 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
     compileOnly("com.elmakers.mine.bukkit:EffectLib:10.2")
     compileOnly("org.spongepowered:configurate-yaml:4.1.2")
+
+    library("org.incendo:cloud-paper:2.0.0-beta.5")
+
     implementation("org.jspecify:jspecify:0.3.0")
 
     implementation("com.google.dagger:dagger:2.51")

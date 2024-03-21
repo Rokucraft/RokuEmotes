@@ -10,5 +10,7 @@ public class RokuEmotesPlugin extends JavaPlugin {
         RokuEmotesComponent component = DaggerRokuEmotesComponent.builder()
                 .plugin(this)
                 .build();
+
+        component.commands().forEach(command -> component.commandManager().command(command));
     }
 }
