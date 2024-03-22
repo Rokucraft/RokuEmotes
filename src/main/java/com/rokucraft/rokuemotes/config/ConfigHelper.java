@@ -7,6 +7,8 @@ import org.spongepowered.configurate.ConfigurateException;
 import org.spongepowered.configurate.yaml.YamlConfigurationLoader;
 
 import javax.inject.Inject;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class ConfigHelper {
@@ -15,8 +17,17 @@ public class ConfigHelper {
 
     @Inject
     public ConfigHelper(@DataPath Path dataPath) {
+        Path configPath = dataPath.resolve("config.yml");
+        if (Files.notExists(configPath)) {
+            try {
+                Files.createDirectories(configPath.getParent());
+                Files.createFile(configPath);
+            } catch (IOException e) {
+                throw new RuntimeException("Couldn't create items.yml", e);
+            }
+        }
         loader = YamlConfigurationLoader.builder()
-                .path(dataPath.resolve("config.yml"))
+                .path(configPath)
                 .defaultOptions(opts -> opts.serializers(b -> b.register(Sound.class, SoundSerializer.INSTANCE)))
                 .build();
     }
