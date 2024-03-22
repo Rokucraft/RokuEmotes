@@ -7,7 +7,6 @@ import org.spongepowered.configurate.objectmapping.meta.NodeKey;
 public record Emote(
         @NodeKey
         String key,
-        String permission,
         Component name,
         String selfTemplate,
         String otherTemplate,
