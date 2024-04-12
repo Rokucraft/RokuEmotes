@@ -10,18 +10,17 @@ import static net.kyori.adventure.text.Component.text;
 
 @NullMarked
 public record Emote(
-        @NodeKey
-        String key,
+        @NodeKey String key,
         @Nullable Component name,
         String selfTemplate,
         String otherTemplate,
         Sound sound
 ) {
-        public String permission() {
-                return "emote." + key;
-        }
+    public String permission() {
+        return "emote." + key;
+    }
 
-        public Component name() {
-                return name != null ? name : text(key);
-        }
+    public Component name() {
+        return name != null ? name : text(key);
+    }
 }

@@ -20,9 +20,17 @@ public class EmoteExecutor {
     }
 
     public void perform(Emote emote, Player self, @Nullable Player other) {
-        boolean isSelf = other == null;
+        sendMessages(emote, self, other);
+        playSounds(emote, self, other);
+    }
+
+    public void perform(Emote emote, Player self) {
+        perform(emote, self, null);
+    }
+
+    private void sendMessages(Emote emote, Player self, @Nullable Player other) {
         Component message;
-        if (isSelf) {
+        if (other == null) {
             message = miniMessage().deserialize(emote.selfTemplate());
         } else {
             message = miniMessage().deserialize(
@@ -33,14 +41,12 @@ public class EmoteExecutor {
         }
 
         Bukkit.broadcast(message);
-
-        self.playSound(emote.sound());
-        if (!isSelf) {
-            other.playSound(emote.sound());
-        }
     }
 
-    public void perform(Emote emote, Player self) {
-        perform(emote, self, null);
+    private void playSounds(Emote emote, Player self, @Nullable Player other) {
+        self.playSound(emote.sound());
+        if (other != null) {
+            other.playSound(emote.sound());
+        }
     }
 }
